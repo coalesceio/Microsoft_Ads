@@ -1,0 +1,186 @@
+fileVersion: 1
+id: 9a6fac23-173d-43d8-87d3-fa57340438dc
+name: STG_MICROSOFT_ADS__AD_GROUP_HISTORY
+operation:
+  config:
+    clusterKey: false
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+    warehouseName: "{{ parameters.MSAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft ad groups.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4e347074-acc7-4334-b086-818be1fa6063
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: STRING
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3693552b-f0c6-49af-b480-dd9ef0d5759a
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: CAST('' AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0ad9bde-b308-4842-9bdb-b200e411094b
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4f830d4-6794-4e41-82eb-b8532a7f106d
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9320942-d90a-4ac0-9e26-e7637fc4ebce
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the corresponding ad group.
+        name: AD_GROUP_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2ec5a42-37ef-4a6a-b48f-a892890f70bb
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13903912-d793-41b4-9b0f-f6b19b0aa1d7
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the campaign.
+        name: CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1b45d0a5-5e3b-44f9-85d3-87a7ae406024
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 75d6bb42-f7b9-4f81-89ce-03e018146636
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 41b4379c-0810-497e-9377-a1e0eb290a63
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10eb2ab0-3ca3-40e0-9ff3-7909f9ac1192
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: DATE
+        description: The date in which an ad group starts running.
+        name: START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5378ee35-967e-4b1d-8ec5-5a0382b27481
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a24883a-4357-4e29-ad11-b525dd317073
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The date in which this ad group will no longer run.
+        name: END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1e062207-eb8d-4cba-96fe-4cba8fcac710
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cbbd432b-9192-4e68-9645-06588e92c973
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The status of this ad group; see the following [documentation](https://help.ads.microsoft.com/apex/index/3/en/53094) for more information on values and definitions.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 58dcc132-c44b-4743-b5df-8d2df474565a
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd7e634c-5847-4d72-85c0-905027d50197
+          stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+        config: {}
+        dataType: BOOLEAN
+        description: Boolean representing whether a record is the most recent version of that record.
+        name: IS_MOST_RECENT_RECORD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4f830d4-6794-4e41-82eb-b8532a7f106d
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+              - columnCounter: 41b4379c-0810-497e-9377-a1e0eb290a63
+                stepCounter: 8d4e2633-54c9-4d80-811f-8d2fb948ccd1
+            transform: |-
+              ROW_NUMBER() OVER (PARTITION BY SOURCE_RELATION,
+              	ID
+              ORDER BY
+              	MODIFIED_TIME DESC) = 1
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__AD_GROUP_HISTORY_TMP
+        join:
+          joinCondition: FROM {{ ref('STAGE', 'STG_MICROSOFT_ADS__AD_GROUP_HISTORY_TMP') }} "STG_MICROSOFT_ADS__AD_GROUP_HISTORY_TMP"
+        name: STG_MICROSOFT_ADS__AD_GROUP_HISTORY
+        noLinkRefs: []
+  name: STG_MICROSOFT_ADS__AD_GROUP_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::156
+  type: sql
+  version: 1
+type: Node

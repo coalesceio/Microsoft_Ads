@@ -1,0 +1,185 @@
+fileVersion: 1
+id: b244deaa-ff57-4419-bc4a-3e192235de7a
+name: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY
+operation:
+  config:
+    clusterKey: false
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+    warehouseName: "{{ parameters.MSAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft campaigns.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c7eebb3-42fb-4e24-9125-de7480d3b0cb
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: STRING
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('' AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a8f41c2-482f-4edb-afdd-3874172b10d9
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the campaign.
+        name: CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b9c6525-9d71-4d0a-a53d-b69943738985
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37ee0db2-486b-4cb3-8e07-2151503bce1a
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the campaign.
+        name: CAMPAIGN_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c358ae0b-82f8-49f6-bab6-ae7cb8b43f6e
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 186c9a4a-06ab-4788-80ba-c8d138502a28
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 95723f31-998b-4007-a992-4a95efac1b66
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e09d1f03-051b-4b7b-be80-0ef80eb06907
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de8c7ed9-e96f-46aa-bb9b-a7da397f4f5a
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba8ba365-64a5-4a08-b026-0bd9adcd00c9
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9145fd6d-184d-49b1-a6e5-55ebdba6a7b0
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6cca6de-7522-4d72-9a3f-8f58a4a1f652
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The time zone associated with this record.
+        name: TIME_ZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cdb0b924-dae4-45bd-8c82-c3d07042c5c5
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8d62c7b-84bd-453b-b008-26733d8f8f47
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f5101da-e2a5-4667-82b0-d09d85482f38
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 705e66b3-231e-43c0-be1b-5bb42240c306
+          stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+        config: {}
+        dataType: STRING
+        description: Boolean representing whether a record is the most recent version of that record.
+        name: IS_MOST_RECENT_RECORD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b9c6525-9d71-4d0a-a53d-b69943738985
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+              - columnCounter: de8c7ed9-e96f-46aa-bb9b-a7da397f4f5a
+                stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+            transform: |-
+              	ROW_NUMBER() OVER (PARTITION BY SOURCE_RELATION,
+              	ID
+              ORDER BY
+              	modified_time DESC) = 1
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_MICROSOFT_ADS__CAMPAIGN_HISTORY_TMP: 4c58949f-165c-4234-87a8-1001663e2812
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY_TMP
+        join:
+          joinCondition: FROM {{ ref('STAGE', 'STG_MICROSOFT_ADS__CAMPAIGN_HISTORY_TMP') }} "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY_TMP"
+        name: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY
+        noLinkRefs: []
+  name: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::156
+  type: sql
+  version: 1
+type: Node

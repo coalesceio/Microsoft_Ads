@@ -1,0 +1,230 @@
+fileVersion: 1
+id: 4c58949f-165c-4234-87a8-1001663e2812
+name: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY_TMP
+operation:
+  config:
+    OverrideSQLCreate: false
+    clusterKey: false
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION
+    refresh_mode: AUTO
+    secureoption: false
+    selectDistinct: false
+    warehouseName: "{{ parameters.MSAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft campaigns.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0b9c6525-9d71-4d0a-a53d-b69943738985
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the campaign.
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ecb7eaf-9063-4f94-b1b1-1fce8988decc
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c358ae0b-82f8-49f6-bab6-ae7cb8b43f6e
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the campaign.
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bbc3fb20-97e8-48c0-8193-44330263ad71
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 95723f31-998b-4007-a992-4a95efac1b66
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4903a867-98a7-43c9-ac1f-022aa3e0b81a
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: de8c7ed9-e96f-46aa-bb9b-a7da397f4f5a
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f81e2818-5ca2-42da-bf49-09f12279f3e5
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9145fd6d-184d-49b1-a6e5-55ebdba6a7b0
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The campaign type associated with this record; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaigntype?view=bingads-13) for more information on values and definitions.
+        name: TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f1d89a3-9ff3-41c8-91df-4a5c6fa7d05e
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cdb0b924-dae4-45bd-8c82-c3d07042c5c5
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The time zone associated with this record.
+        name: TIME_ZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 200bc636-493b-4b1a-844b-9a6ba74b7798
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f5101da-e2a5-4667-82b0-d09d85482f38
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The status of this campaign; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaignstatus?view=bingads-13) for more information on values and definitions.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 923aa5c9-293e-45f4-9cf9-6566b4ed13b7
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b310bc65-bd48-45eb-afe0-7548c58c81fa
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a22a9840-1ed8-4fd3-a97f-9dcea421de1a
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bf92035-f5e9-4cf5-b63c-28a82ec72a76
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be688091-48c4-4500-afcd-4bd6c43b0132
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a6f13b1-f8fa-4b4b-8d97-25dcd43af910
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: STRING
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 007c2077-a2d1-4934-bb7c-c3bc731ace94
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85d73cbd-23df-48ba-b566-41b0f9167e34
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1ad8d537-ead5-45ec-a99d-f993b8e3215f
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3bd9fd0-da71-4c8c-b4db-d4ad56e9eafa
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3003191-8916-4176-ab10-86adaf38dec5
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9a5c5fc-cae0-413d-af2b-a3bc75d65350
+          stepCounter: 4c58949f-165c-4234-87a8-1001663e2812
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afd7d3a3-e757-4762-a543-c2f29d24f9a1
+                stepCounter: f215705c-ea63-4587-b6f9-72be3c309ef9
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: CAMPAIGN_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'CAMPAIGN_HISTORY') }} "CAMPAIGN_HISTORY"
+        name: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY_TMP
+        noLinkRefs: []
+  name: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::156
+  type: sql
+  version: 1
+type: Node

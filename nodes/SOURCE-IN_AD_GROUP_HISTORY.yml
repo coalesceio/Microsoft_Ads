@@ -1,0 +1,153 @@
+fileVersion: 1
+id: 4f104a59-b59c-483d-88fb-b361913c931e
+name: IN_AD_GROUP_HISTORY
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce5ffa3b-887e-4d68-95bb-2cb185413a39
+          stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+        config: {}
+        dataType: NUMBER(16,0)
+        defaultValue: ""
+        description: ""
+        name: ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 58f99359-8545-4c53-91b6-76418b4c1929
+          stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5519454a-af34-4035-8477-33ea40927d5f
+          stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+        config: {}
+        dataType: NUMBER(9,0)
+        defaultValue: ""
+        description: ""
+        name: CAMPAIGN_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55208a38-d742-4ae1-983e-d8a3fd361b60
+          stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: MODIFIED_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2441c6e0-7c43-4c64-bd12-a30cb52a65ed
+          stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: efb0f040-60f3-4356-b6f1-676e631b57d2
+          stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 808fa21d-6d8d-4e4b-b3a4-d691bb934bc4
+          stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'IN_AD_GROUP_HISTORY') }}
+  name: IN_AD_GROUP_HISTORY
+  schema: ""
+  sqlType: Source
+  table: IN_AD_GROUP_HISTORY
+  type: sourceInput
+  version: 1
+type: Node

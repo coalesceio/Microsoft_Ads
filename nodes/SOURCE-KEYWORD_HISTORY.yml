@@ -1,0 +1,233 @@
+fileVersion: 1
+id: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+name: KEYWORD_HISTORY
+operation:
+  config:
+    compression: ""
+    dateformat: ""
+    enforceLength: ""
+    errornumber: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: SOURCE
+    fileFormatName: COPYfileformat
+    fileFormatType: File Format Name
+    fileNames: "'MICROSOFT_ADS_KEYWORD_HISTORY_DATA.csv'"
+    filePattern: ""
+    fileType: CSV
+    forceLoad: ""
+    intextstage: true
+    loadUncertainFiles: ""
+    onError: ""
+    purgeBehavior: "FALSE"
+    recDelim: |+
+
+    replaceinvalidcharacters: false
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: MICROSOFT_SEEDS/
+    stageStorageLocationName: SEEDS
+    storageintegration: ""
+    stripouterarray: false
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateColumns: ""
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft keywords.
+  isMultisource: false
+  locationName: SOURCE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1f544133-2c30-4c98-abf6-c890996cb182
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: NUMBER(14,0)
+        description: The ID of the keyword.
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9da6ad3d-4b09-4835-84b0-2982ce551160
+                stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd1f558b-5551-4751-8e93-0cc3fa143880
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The keyword(s) associated with this record.
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8657a92-cedf-451d-90fa-b1a9863f1019
+                stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2664b5cd-8801-4a93-8ffa-2f0cc34fbda0
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bfb26c71-aa74-4a9c-8ef7-92f42cc0c4ca
+                stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cef702f6-80a0-4643-aa70-e31b58caf469
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3aed2166-436c-4082-a75e-5fd14408bf03
+                stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: efd893b3-8810-4ada-a1a8-8983f173fdf7
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The match type associated with this record; values contain but may not be limited to 'Broad', 'Exact', 'Phrase'. Please refer to Microsoft Ad's [documentation](https://help.ads.microsoft.com/#apex/ads/en/50822/1).
+        name: MATCH_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc3e4281-c6ac-4d6e-a020-08a2dae28dac
+                stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be71da94-a2a9-410b-8281-1ce8cec755cd
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The status of this keyword; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/keywordstatus?view=bingads-13) for more information on values and definitions.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 454aa2fe-75bb-4302-a212-8e33ef7131e8
+                stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f29b80c7-359d-4f40-9cc2-50f0cc85abd0
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: $1
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 21990e9f-49a8-43ad-95f0-d53172bf8a8d
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c315828a-3aff-4dde-a8bd-2cbfadf89da4
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d850d456-d845-49f2-b2b8-6d9d1f29eed1
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_ROW_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d2a63331-e0c4-470b-b20e-c2ed89cd9e40
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_LAST_MODIFIED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a04baae-9b56-42b5-a4e9-7c35e5697db1
+          stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$START_SCAN_TIME
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: IN_KEYWORD_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'IN_KEYWORD_HISTORY') }} "IN_KEYWORD_HISTORY"
+        name: KEYWORD_HISTORY
+        noLinkRefs: []
+  name: KEYWORD_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: EDP:::324
+  type: sql
+  version: 1
+type: Node

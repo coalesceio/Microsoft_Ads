@@ -1,0 +1,374 @@
+fileVersion: 1
+id: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+name: SEARCH_PERFORMANCE_DAILY_REPORT
+operation:
+  config:
+    compression: ""
+    dateformat: ""
+    enforceLength: ""
+    errornumber: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: SOURCE
+    fileFormatName: COPYfileformat
+    fileFormatType: File Format Name
+    fileNames: "'MICROSOFT_ADS_SEARCH_PERFORMANCE_DAILY_REPORT_DATA.csv'"
+    filePattern: ""
+    fileType: CSV
+    forceLoad: ""
+    intextstage: true
+    loadUncertainFiles: ""
+    onError: ABORT_STATEMENT
+    purgeBehavior: "FALSE"
+    recDelim: |+
+
+    replaceinvalidcharacters: false
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: MICROSOFT_SEEDS/
+    stageStorageLocationName: SEEDS
+    storageintegration: ""
+    stripouterarray: false
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateColumns: ""
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents the daily performance by account, campaign, ad group, ad, keyword and all non-metric columns.
+  isMultisource: false
+  locationName: SOURCE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d559d97e-5478-46f1-aacb-3e7125e4729b
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: DATE
+        description: The date of the performance report.
+        name: DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0b39a90-7bee-4633-ac2e-1a44d7e43f8f
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09dad438-fc5c-4bc2-aebd-a02aa3a422b2
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: edb71f39-fcc3-4a9c-b0fc-7eac42a938f2
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c668d16e-934f-4f2d-aeb4-3c55217607c1
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the campaign.
+        name: CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 82bc6066-8379-4ce9-b78e-607f3d09b807
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2b172e8-461d-43df-b79e-dc120bab6b81
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1d52cf9-99b1-4bd9-8d08-e1e6e3a2ad20
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84cc3cf6-7714-47ae-b036-4719c9dd173c
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(14,0)
+        description: The ID of the corresponding ad.
+        name: AD_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec16fe3c-f958-4428-84c8-1e0d66c2c3f9
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7975ab7c-3ed4-46a7-9363-415d65f68986
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(14,0)
+        description: The ID of the keyword.
+        name: KEYWORD_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7311568-7df4-4602-a417-2f02ea4e6717
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4fd72492-512d-469b-909c-07991092045b
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The position of the ad associated with this record. For more information, refer to Microsoft [documentation](https://help.ads.microsoft.com/apex/index/22/en/14009).
+        name: SEARCH_QUERY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecf4cac7-90ae-4190-8550-37fa679d61e6
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50ba2ac3-eefe-4d4c-80e4-00274bdddc4a
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device operating system associated with this record; values include but may not be limited to 'Windows', 'iOS', 'Android', 'Other', 'BlackBerry' and 'Unknown'.
+        name: DEVICE_OS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30435155-97c1-42b5-844f-dccb86548a79
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d10a7cf-c5b8-47db-8b96-107afb57b538
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device type associated with this record; values include but may not be limited to 'Computer', 'Smartphone', 'Tablet' and 'Unknown'.
+        name: DEVICE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e49fc6a3-7011-4d6d-a9ca-4f5a2384a6f6
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 927ae1f6-7c8b-450a-9127-316c8c8572ac
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The network associated with this record.
+        name: NETWORK
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d26773bb-3e3c-4fae-9ba5-5e811729ef03
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44eadd85-6838-495f-ae29-9ca3e8c6e8ea
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The language that the associated ad was viewed in.
+        name: LANGUAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 090220c1-026c-47ba-b86f-627c3714ff1b
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4852ab0-1db6-4c35-8fc5-36760cffae4e
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The bid match type associated with this record; values include 'Broad', 'Exact', 'Phrase'.
+        name: BID_MATCH_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aacda49b-ca89-4b01-b954-266899b68f76
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6cbff453-e95b-45aa-9d6e-4b0a9724df81
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The delivered match type associated with this record; values include 'Broad', 'Exact', 'Phrase'.
+        name: DELIVERED_MATCH_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b538347a-b97e-4c88-85ab-323244b24814
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d445701-4c63-4b7e-94f0-d6f2645a4e2e
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The position of the ad associated with this record. For more information, refer to Microsoft [documentation](https://help.ads.microsoft.com/apex/index/22/en/14009).
+        name: TOP_VS_OTHER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef65e5ef-60e5-45b4-8fd3-9178b4c67701
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca36cd85-bbd2-4692-a41d-54a5cc52f6be
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(1,0)
+        description: The number of clicks that occurred by the grain of the report.
+        name: CLICKS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e499f315-0262-48cc-97a5-a6ae74f8863e
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: df54b002-8668-43ee-b5dd-b6d95e311098
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(3,0)
+        description: The number of impressions that occurred by the grain of the report.
+        name: IMPRESSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4fb159ad-0d7c-423e-93a2-c749e3b367e1
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9aaa3791-08fc-4e20-9a39-47e71d4236a4
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER(4,2)
+        description: The amount of spend that occurred by the grain of the report.
+        name: SPEND
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f38dc2a3-aa7b-4328-8b67-7539348aff16
+                stepCounter: 795f4d4a-df94-422d-90b9-422b42f9082e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a97b31eb-1fe1-4afa-a997-48d66f07a4ef
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39c59de8-4785-44fe-b5b8-44c05b2ee777
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32ce3aa6-ccaa-48de-9333-72300e4039d7
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_ROW_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 714a92f1-80fe-4b48-b45b-6721944fe216
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_LAST_MODIFIED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8732ae8a-03bb-4d74-a707-854add7313de
+          stepCounter: 240dbf75-b8c4-4bf4-a906-491a1a475b1e
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$START_SCAN_TIME
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: IN_SEARCH_PERFORMANCE_DAILY_REPORT
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'IN_SEARCH_PERFORMANCE_DAILY_REPORT') }} "IN_SEARCH_PERFORMANCE_DAILY_REPORT"
+        name: SEARCH_PERFORMANCE_DAILY_REPORT
+        noLinkRefs: []
+  name: SEARCH_PERFORMANCE_DAILY_REPORT
+  overrideSQL: false
+  schema: ""
+  sqlType: EDP:::324
+  type: sql
+  version: 1
+type: Node

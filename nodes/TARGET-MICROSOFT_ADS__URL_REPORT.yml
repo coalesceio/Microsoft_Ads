@@ -1,0 +1,487 @@
+fileVersion: 1
+id: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+name: MICROSOFT_ADS__URL_REPORT
+operation:
+  config:
+    clusterKey: false
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION ALL
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: false
+    warehouseName: "{{ parameters.MSAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: |
+    Each record in this table represents the daily clicks, impressions, spend (and if applicable other passthrough metrics) of ads  by ad, ad group, campaign, account, ad type, device os, device type, network, currency code, url and utm parameters.
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f154d149-2366-4f11-a982-5d220c30bb88
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: STRING
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cfa2ddbf-bff2-459e-9205-9180304109f7
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 58ec85ec-ff45-4246-aa15-a090c3d5bc0b
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: DATE
+        description: The date of the performance report.
+        name: DATE_DAY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2034a07d-a658-4184-8753-1a312867b0a4
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b39b509-e7bb-44df-b5b1-5ed9de1078dc
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the account.
+        name: ACCOUNT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1775d45f-f19a-4c88-a27c-2250269707b3
+                stepCounter: 63e671ee-506b-4657-a972-ae8f0f5391d1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 36136fde-3c0a-4a49-93be-bfbdf3ff61eb
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e9fbbb93-03e4-40d9-91af-b26f2c6e1702
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c10360cc-91ff-4f6d-8365-43b508dc39ab
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the campaign.
+        name: CAMPAIGN_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37ee0db2-486b-4cb3-8e07-2151503bce1a
+                stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a62cbb5-791d-420f-abdc-d88a7ea50242
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the campaign.
+        name: CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2fc6c49f-d0a6-4dae-885c-c3ba9612f5da
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d9a2559-602b-4eff-994f-797fb2e15f3c
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the corresponding ad group.
+        name: AD_GROUP_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c9320942-d90a-4ac0-9e26-e7637fc4ebce
+                stepCounter: 9a6fac23-173d-43d8-87d3-fa57340438dc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec21a883-ebb2-4034-88ab-d7d4f1edbdec
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53eb424c-beb5-4c59-b359-76b8741132e5
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 236fbe24-c908-45e2-bc15-9ee99b21b74f
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the corresponding ad; `title_part_1` is used as the ad name as a proxy as one is not provided by the data source.
+        name: AD_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b48c59c-91b7-4eab-9661-6191a4fe35e3
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e96f8bfd-a780-411b-8dd3-5256be2b1214
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: NUMBER(14,0)
+        description: The ID of the corresponding ad.
+        name: AD_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0936e028-193c-4a05-99c2-745ecc30a7bb
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56e59561-a13f-48e7-972f-c005b0c57862
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device operating system associated with this record; values include but may not be limited to 'Windows', 'iOS', 'Android', 'Other', 'BlackBerry' and 'Unknown'.
+        name: DEVICE_OS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 968d519c-18c9-40f7-b086-d6d60d78244b
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0b0f7c2-2c47-4f1f-ac59-60ebc27b6364
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device type associated with this record; values include but may not be limited to 'Computer', 'Smartphone', 'Tablet' and 'Unknown'.
+        name: DEVICE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cb851e6d-e990-466f-b09a-75caffc8fbb8
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6da1c5f-9264-4a6d-9f20-13657d00b058
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The network associated with this record.
+        name: NETWORK
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 47b3b2c4-e8ab-4095-a515-75b4f9ad62b1
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d066c0dd-99bd-49a8-9f66-da19f8b613bd
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The currency code associated with spend and, if applicable, other metrics associated with currency.
+        name: CURRENCY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ccd7573-a362-491a-afb1-0873f156489c
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc0f88da-b6b0-4b13-b64e-ea66168772ba
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The base URL of the ad, extracted from the `final_url`.
+        name: BASE_URL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: SPLIT_PART("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", '?', 1)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f955f6d7-da3a-4c3d-bb86-d88d6741d986
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The URL host of the ad, extracted from the `final_url`.
+        name: URL_HOST
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: |2-
+                      TRY_CAST(
+                          SPLIT_PART(
+                              SPLIT_PART(
+                                  REPLACE(REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'android-app://', ''), 'http://', ''), 'https://', ''),
+                                  '/',
+                                  1
+                              ),
+                              '?',
+                              1
+                          ) AS TEXT
+                      ) 
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34d1dbc9-4fbe-44cb-8c9b-5f990ac2f082
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The URL path of the ad, extracted from the `final_url`.
+        name: URL_PATH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: |-
+              '/' || TRY_CAST(
+                          SPLIT_PART(
+                              CASE
+                                  WHEN LENGTH(REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'http://', ''), 'https://', ''))
+                                      - COALESCE(NULLIF(POSITION('/' IN REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'http://', ''), 'https://', '')), 0), 
+                                      POSITION('?' IN REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'http://', ''), 'https://', '')) - 1) = 0
+                                  THEN ''
+                                  ELSE RIGHT(
+                                      REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'http://', ''), 'https://', ''),
+                                      LENGTH(REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY".final_url, 'http://', ''), 'https://', ''))
+                                      - COALESCE(NULLIF(POSITION('/' IN REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'http://', ''), 'https://', '')), 0),
+                                      POSITION('?' IN REPLACE(REPLACE("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'http://', ''), 'https://', '')) - 1)
+                                  )
+                              END,
+                              '?',
+                              1
+                          ) AS TEXT
+                      )
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fa21df15-876d-499f-afea-a6f7fdf22b3d
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The site that sent traffic to your page. Microsoft Advertising sets this to Bing; extracted from the `final_url`.
+        name: UTM_SOURCE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: NULLIF(SPLIT_PART(SPLIT_PART("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'utm_source=', 2), '&', 1), '')
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f359837-3f15-43e5-b554-b9f9435c88c5
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: Which channel was used. Microsoft Advertising sets this to cp; extracted from the `final_url`.
+        name: UTM_MEDIUM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: NULLIF(SPLIT_PART(SPLIT_PART("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'utm_medium=', 2), '&', 1), '')
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4039e4d2-6b4a-4a4f-b3ec-6c1ab24b4bbf
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: Which campaign the keyword came from; extracted from the `final_url`.
+        name: UTM_CAMPAIGN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: NULLIF(SPLIT_PART(SPLIT_PART("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'utm_campaign=', 2), '&', 1), '')
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 65af012d-e4f3-4bbb-806d-76ae831aa9f2
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: Which ad group the keyword came from; extracted from the `final_url`.
+        name: UTM_CONTENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: NULLIF(SPLIT_PART(SPLIT_PART("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'utm_content=', 2), '&', 1), '')
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c892309a-7d5c-45c7-9e98-546bb37b68d4
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: Which keyword brought people to your website; extracted from the `final_url`.
+        name: UTM_TERM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccf41dc7-46ed-4796-8ae8-818c020adaf5
+                stepCounter: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+            transform: NULLIF(SPLIT_PART(SPLIT_PART("STG_MICROSOFT_ADS__AD_HISTORY"."FINAL_URL", 'utm_term=', 2), '&', 1), '')
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da0d7891-5058-4ac3-983a-695eeae805ae
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: NUMBER(1,0)
+        description: The number of clicks that occurred by the grain of the report.
+        name: CLICKS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bede6fe4-e523-4cc2-a6f6-0e1d3c1219e2
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: SUM("STG_MICROSOFT_ADS__AD_DAILY_REPORT"."CLICKS")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dff90a0d-de40-45df-85eb-a72e4292b5f6
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: NUMBER(2,0)
+        description: The number of impressions that occurred by the grain of the report.
+        name: IMPRESSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e9cb580-9019-4062-a29c-438a8843856d
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: SUM("STG_MICROSOFT_ADS__AD_DAILY_REPORT"."IMPRESSIONS")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ced9fbeb-561c-471d-8728-6e570a5b77cb
+          stepCounter: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        config: {}
+        dataType: NUMBER(4,2)
+        description: The amount of spend that occurred by the grain of the report.
+        name: SPEND
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b70f9e3-235b-4fef-b46c-d5f774d424aa
+                stepCounter: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+            transform: SUM("STG_MICROSOFT_ADS__AD_DAILY_REPORT"."SPEND")
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_MICROSOFT_ADS__ACCOUNT_HISTORY: 63e671ee-506b-4657-a972-ae8f0f5391d1
+          STG_MICROSOFT_ADS__AD_DAILY_REPORT: c51e5170-0c5b-4bd3-8f90-ef03be61bfba
+          STG_MICROSOFT_ADS__AD_GROUP_HISTORY: 9a6fac23-173d-43d8-87d3-fa57340438dc
+          STG_MICROSOFT_ADS__AD_HISTORY: 7b89be34-90c5-493f-b4b7-8671aaf27f74
+          STG_MICROSOFT_ADS__CAMPAIGN_HISTORY: b244deaa-ff57-4419-bc4a-3e192235de7a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__ACCOUNT_HISTORY
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__AD_DAILY_REPORT
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__AD_GROUP_HISTORY
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__AD_HISTORY
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE', 'STG_MICROSOFT_ADS__AD_DAILY_REPORT') }} "STG_MICROSOFT_ADS__AD_DAILY_REPORT"
+            LEFT JOIN {{ ref('STAGE', 'STG_MICROSOFT_ADS__AD_HISTORY') }} "STG_MICROSOFT_ADS__AD_HISTORY"
+              ON "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."AD_ID" = "STG_MICROSOFT_ADS__AD_HISTORY"."AD_ID"
+             AND "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."SOURCE_RELATION" = "STG_MICROSOFT_ADS__AD_HISTORY"."SOURCE_RELATION"
+             AND "STG_MICROSOFT_ADS__AD_HISTORY"."IS_MOST_RECENT_RECORD" = TRUE
+            LEFT JOIN {{ ref('STAGE', 'STG_MICROSOFT_ADS__AD_GROUP_HISTORY') }} "STG_MICROSOFT_ADS__AD_GROUP_HISTORY"
+              ON "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."AD_GROUP_ID" = "STG_MICROSOFT_ADS__AD_GROUP_HISTORY"."AD_GROUP_ID"
+             AND "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."SOURCE_RELATION" = "STG_MICROSOFT_ADS__AD_GROUP_HISTORY"."SOURCE_RELATION"
+             AND "STG_MICROSOFT_ADS__AD_GROUP_HISTORY"."IS_MOST_RECENT_RECORD" = TRUE
+            LEFT JOIN {{ ref('STAGE', 'STG_MICROSOFT_ADS__CAMPAIGN_HISTORY') }} "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"
+              ON "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."CAMPAIGN_ID" = "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."CAMPAIGN_ID"
+             AND "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."SOURCE_RELATION" = "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."SOURCE_RELATION"
+             AND "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."IS_MOST_RECENT_RECORD" = TRUE
+            LEFT JOIN {{ ref('STAGE', 'STG_MICROSOFT_ADS__ACCOUNT_HISTORY') }} "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"
+              ON "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."ACCOUNT_ID" = "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."ACCOUNT_ID"
+             AND "STG_MICROSOFT_ADS__AD_DAILY_REPORT"."SOURCE_RELATION" = "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."SOURCE_RELATION"
+             AND "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."IS_MOST_RECENT_RECORD" = TRUE
+             GROUP BY
+            	1,
+            	2,
+            	3,
+            	4,
+            	5,
+            	6,
+            	7,
+            	8,
+            	9,
+            	10,
+            	11,
+            	12,
+            	13,
+            	14,
+            	15,
+            	16,
+            	17,
+            	18,
+            	19,
+            	20,
+            	21,
+            	22
+        name: MICROSOFT_ADS__URL_REPORT
+        noLinkRefs: []
+  name: MICROSOFT_ADS__URL_REPORT
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::156
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,134 @@
+fileVersion: 1
+id: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+name: IN_KEYWORD_HISTORY
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9da6ad3d-4b09-4835-84b0-2982ce551160
+          stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+        config: {}
+        dataType: NUMBER(14,0)
+        defaultValue: ""
+        description: ""
+        name: ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8657a92-cedf-451d-90fa-b1a9863f1019
+          stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfb26c71-aa74-4a9c-8ef7-92f42cc0c4ca
+          stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: MODIFIED_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3aed2166-436c-4082-a75e-5fd14408bf03
+          stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+        config: {}
+        dataType: NUMBER(16,0)
+        defaultValue: ""
+        description: ""
+        name: AD_GROUP_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc3e4281-c6ac-4d6e-a020-08a2dae28dac
+          stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: MATCH_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 454aa2fe-75bb-4302-a212-8e33ef7131e8
+          stepCounter: 803b71b1-35dd-4ed8-8712-a03ce00eeae9
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'IN_KEYWORD_HISTORY') }}
+  name: IN_KEYWORD_HISTORY
+  schema: ""
+  sqlType: Source
+  table: IN_KEYWORD_HISTORY
+  type: sourceInput
+  version: 1
+type: Node

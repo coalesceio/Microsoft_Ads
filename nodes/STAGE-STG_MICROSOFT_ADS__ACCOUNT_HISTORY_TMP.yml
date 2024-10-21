@@ -1,0 +1,202 @@
+fileVersion: 1
+id: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+name: STG_MICROSOFT_ADS__ACCOUNT_HISTORY_TMP
+operation:
+  config:
+    OverrideSQLCreate: false
+    clusterKey: false
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION
+    refresh_mode: AUTO
+    secureoption: false
+    selectDistinct: false
+    warehouseName: "{{ parameters.MSAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft accounts.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e0be7bc-1fa4-485f-9469-2c62d30cf4e9
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f8d8a69-310c-40e4-afc9-733d891049e3
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 443617ad-90be-4a71-9bf4-3c80e33f3a60
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the account.
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a9841f5-c06c-4d81-8337-0fc9ee5f83bf
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26d316da-a15c-4a74-bdba-7684e09fefc8
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: LAST_MODIFIED_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91cea6aa-b3ea-46b7-aec8-d5896b21ad6e
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46876e6a-2a17-4425-bc45-6b7c43166cbc
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The time zone associated with this record.
+        name: TIME_ZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a530b01b-158f-4c74-b3e9-fd9607350c09
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5da7e0ff-0690-40a6-acea-d9907d5f0b4c
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The currency code associated with spend and, if applicable, other metrics associated with currency.
+        name: CURRENCY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4f813c9-520c-4c2c-b03b-92fc38fc721a
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac50f2b2-719a-4179-99ff-0c012b51a0c6
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eacf1f3d-afbb-48fe-ac27-08c76d63982c
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2297eaf6-a1d6-48ae-b198-06136aa2b197
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ceaa840b-60cc-4926-b8f4-61d76790893d
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d63e3bf8-59aa-47ee-8821-22cd12cbb683
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: STRING
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a0f2f500-afe6-4ab1-ad54-11a43dd2c857
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 494005fd-04b2-4a43-9e19-03449204a9eb
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0e400613-bd02-4d8b-baf8-12f34c2edee6
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa26c978-445f-4e57-aad8-14b2b10b6b5e
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e3f419e-d3b1-43d2-883f-7fcec8ec8ee9
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ab30605-f217-4c60-9298-19861c8d4805
+          stepCounter: 6d147a38-e1a8-4639-bd0e-2c45d1f3ee18
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5e57739-d488-498b-85b5-4b0336262194
+                stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: ACCOUNT_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'ACCOUNT_HISTORY') }} "ACCOUNT_HISTORY"
+        name: STG_MICROSOFT_ADS__ACCOUNT_HISTORY_TMP
+        noLinkRefs: []
+  name: STG_MICROSOFT_ADS__ACCOUNT_HISTORY_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::156
+  type: sql
+  version: 1
+type: Node

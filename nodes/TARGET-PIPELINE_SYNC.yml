@@ -1,0 +1,152 @@
+fileVersion: 1
+id: d0392004-97ca-473f-9420-4ce72764c7e5
+name: PIPELINE_SYNC
+operation:
+  config:
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    downstreamOption: false
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION ALL
+    lagSpecification:
+      items:
+        - lagPeriod: Minutes
+          lagValue: "60"
+    refresh_mode: AUTO
+    selectDistinct: false
+    warehouseName: "{{ parameters.MSAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: true
+  locationName: TARGET
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dbd40377-f5aa-448d-9342-dfd173a605d4
+          stepCounter: d0392004-97ca-473f-9420-4ce72764c7e5
+        config: {}
+        dataType: ""
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: SOURCE_NODE_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "'MICROSOFT_ADS__ACCOUNT_REPORT'"
+          - columnReferences: []
+            transform: "'MICROSOFT_ADS__AD_GROUP_REPORT'"
+          - columnReferences: []
+            transform: "'MICROSOFT_ADS__AD_REPORT'"
+          - columnReferences: []
+            transform: "'MICROSOFT_ADS__CAMPAIGN_REPORT'"
+          - columnReferences: []
+            transform: "'MICROSOFT_ADS__KEYWORD_REPORT'"
+          - columnReferences: []
+            transform: "'MICROSOFT_ADS__SEARCH_REPORT'"
+          - columnReferences: []
+            transform: "'MICROSOFT_ADS__URL_REPORT'"
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          MICROSOFT_ADS__ACCOUNT_REPORT: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: MICROSOFT_ADS__ACCOUNT_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'MICROSOFT_ADS__ACCOUNT_REPORT') }} "MICROSOFT_ADS__ACCOUNT_REPORT"
+        name: MICROSOFT_ADS__ACCOUNT_REPORT
+        noLinkRefs: []
+      - aliases:
+          MICROSOFT_ADS__AD_GROUP_REPORT: d08c3a67-4b85-433a-8c82-125865d2b3ba
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: MICROSOFT_ADS__AD_GROUP_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'MICROSOFT_ADS__AD_GROUP_REPORT') }} "MICROSOFT_ADS__AD_GROUP_REPORT"
+        name: MICROSOFT_ADS__AD_GROUP_REPORT
+        noLinkRefs: []
+      - aliases:
+          MICROSOFT_ADS__AD_REPORT: b8f57483-8de2-4868-a0a7-9f2d5de1f273
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: MICROSOFT_ADS__AD_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'MICROSOFT_ADS__AD_REPORT') }} "MICROSOFT_ADS__AD_REPORT"
+        name: MICROSOFT_ADS__AD_REPORT
+        noLinkRefs: []
+      - aliases:
+          MICROSOFT_ADS__CAMPAIGN_REPORT: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: MICROSOFT_ADS__CAMPAIGN_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'MICROSOFT_ADS__CAMPAIGN_REPORT') }} "MICROSOFT_ADS__CAMPAIGN_REPORT"
+        name: MICROSOFT_ADS__CAMPAIGN_REPORT
+        noLinkRefs: []
+      - aliases:
+          MICROSOFT_ADS__KEYWORD_REPORT: 5ac6c48e-dfba-4bbc-bd13-39685c66fc5c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: MICROSOFT_ADS__KEYWORD_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'MICROSOFT_ADS__KEYWORD_REPORT') }} "MICROSOFT_ADS__KEYWORD_REPORT"
+        name: MICROSOFT_ADS__KEYWORD_REPORT
+        noLinkRefs: []
+      - aliases:
+          MICROSOFT_ADS__SEARCH_REPORT: 09786b83-0589-47ff-bb51-7718ec8d0987
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: MICROSOFT_ADS__SEARCH_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'MICROSOFT_ADS__SEARCH_REPORT') }} "MICROSOFT_ADS__SEARCH_REPORT"
+        name: MICROSOFT_ADS__SEARCH_REPORT
+        noLinkRefs: []
+      - aliases:
+          MICROSOFT_ADS__URL_REPORT: 1278e4cb-a118-4cb7-bd58-0d23242e590d
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: MICROSOFT_ADS__URL_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'MICROSOFT_ADS__URL_REPORT') }} "MICROSOFT_ADS__URL_REPORT"
+        name: MICROSOFT_ADS__URL_REPORT
+        noLinkRefs: []
+  name: PIPELINE_SYNC
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::156
+  type: sql
+  version: 1
+type: Node

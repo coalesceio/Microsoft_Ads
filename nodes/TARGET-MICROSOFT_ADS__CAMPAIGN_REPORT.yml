@@ -1,0 +1,310 @@
+fileVersion: 1
+id: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+name: MICROSOFT_ADS__CAMPAIGN_REPORT
+operation:
+  config:
+    clusterKey: false
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION ALL
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: false
+    warehouseName: "{{ parameters.MSAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: |
+    Each record in this table represents the daily clicks, impressions, spend (and if applicable other passthrough metrics) of ads  by campaign, account, campaign type, campaign timezone, campaign status, device os, device type, network and currency code.
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba8d2186-ad6e-4334-9f96-c893259ac8c3
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: STRING
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64366c25-3185-4850-8ed7-87e1e2b8d5b6
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62cec55e-4cc8-46dc-b841-9e7c23a44100
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: DATE
+        description: The date of the performance report.
+        name: DATE_DAY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bcef7c94-18f1-4358-8ee4-612b3a6dad02
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80dbb342-8ed8-4c35-9438-f679b89ccd64
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the account.
+        name: ACCOUNT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1775d45f-f19a-4c88-a27c-2250269707b3
+                stepCounter: 63e671ee-506b-4657-a972-ae8f0f5391d1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4ddd2db-e563-42f6-9a55-e19f1289e61d
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2c699135-c272-4223-9827-89379edba5fe
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: afc72485-ce05-4313-900a-045501e80e6c
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the campaign.
+        name: CAMPAIGN_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37ee0db2-486b-4cb3-8e07-2151503bce1a
+                stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e40a6a0f-07e0-4b54-a6ac-8483fc2d0418
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the campaign.
+        name: CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 900762a6-ce51-4d0e-8e40-f58253a8bdae
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a7d4be7-6e9d-40da-b49e-8eb8db4e120c
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The campaign type associated with this record; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaigntype?view=bingads-13) for more information on values and definitions.
+        name: CAMPAIGN_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba8ba365-64a5-4a08-b026-0bd9adcd00c9
+                stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3dbfd17e-cb9f-4e7b-8c06-9840699f3c1e
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The time zone associated with this campaign.
+        name: CAMPAIGN_TIMEZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6cca6de-7522-4d72-9a3f-8f58a4a1f652
+                stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b1eef0ff-b914-45a3-a79d-dbe9626fc8dc
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: |
+          The status of this campaign; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaignstatus?view=bingads-13) for more information on values and definitions.
+        name: CAMPAIGN_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8d62c7b-84bd-453b-b008-26733d8f8f47
+                stepCounter: b244deaa-ff57-4419-bc4a-3e192235de7a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6b58dc2-6df5-4145-9b2e-17fdec63ce5e
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device operating system associated with this record; values include but may not be limited to 'Windows', 'iOS', 'Android', 'Other', 'BlackBerry' and 'Unknown'.
+        name: DEVICE_OS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 44579fed-dfbb-4659-a2f5-e1e4234ccc39
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19d755fb-0906-4b49-992b-8963d2768f6d
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device type associated with this record; values include but may not be limited to 'Computer', 'Smartphone', 'Tablet' and 'Unknown'.
+        name: DEVICE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 36319d40-ac8d-4530-9426-950f6d9cc56a
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13ef9dd8-2d4e-422d-bb23-9a5b0b9320a8
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The network associated with this record.
+        name: NETWORK
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37163f9d-b809-455a-a3c6-f3999cf592ed
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50abaca0-e023-4cad-8183-83a40f8211fe
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The currency code associated with spend and, if applicable, other metrics associated with currency.
+        name: CURRENCY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d799d013-d402-4fe3-8624-e635953be639
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f5d157f-bd81-43e6-a1d5-e01acde495f4
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: NUMBER(2,0)
+        description: The number of clicks that occurred by the grain of the report.
+        name: CLICKS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2d9cc47-4abb-4a14-899f-3667ca0ff548
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: SUM("STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."CLICKS")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cb5a5b2d-cd0d-4530-95d8-45903a621c01
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: NUMBER(3,0)
+        description: The number of impressions that occurred by the grain of the report.
+        name: IMPRESSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afca51c5-5777-4807-9ced-9249940cb92c
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: SUM("STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."IMPRESSIONS")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ce85183-a585-412b-8dc3-44634946c85c
+          stepCounter: ae7030fe-0627-4c8a-af57-8b3235e1c0a1
+        config: {}
+        dataType: NUMBER(4,2)
+        description: The amount of spend that occurred by the grain of the report.
+        name: SPEND
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b672833-3cb5-4183-bdef-3ca2a35296a3
+                stepCounter: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+            transform: SUM("STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."SPEND")
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_MICROSOFT_ADS__ACCOUNT_HISTORY: 63e671ee-506b-4657-a972-ae8f0f5391d1
+          STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT: e6ee6842-b42c-4dab-b4eb-24cf5426192e
+          STG_MICROSOFT_ADS__CAMPAIGN_HISTORY: b244deaa-ff57-4419-bc4a-3e192235de7a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__ACCOUNT_HISTORY
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__CAMPAIGN_HISTORY
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE', 'STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT') }} "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"
+            LEFT JOIN {{ ref('STAGE', 'STG_MICROSOFT_ADS__ACCOUNT_HISTORY') }} "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"
+              ON "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."ACCOUNT_ID" = "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."ACCOUNT_ID"
+             AND "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."SOURCE_RELATION" = "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."SOURCE_RELATION"
+             AND "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."IS_MOST_RECENT_RECORD" = TRUE
+            LEFT JOIN {{ ref('STAGE', 'STG_MICROSOFT_ADS__CAMPAIGN_HISTORY') }} "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"
+              ON "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."CAMPAIGN_ID" = "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."CAMPAIGN_ID"
+              AND "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."SOURCE_RELATION" = "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."SOURCE_RELATION"
+              AND "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."IS_MOST_RECENT_RECORD" = TRUE
+            GROUP BY 
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."SOURCE_RELATION" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."DATE_DAY",
+                  "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."ACCOUNT_NAME" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."ACCOUNT_ID" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."CAMPAIGN_NAME" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."CAMPAIGN_ID" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."TYPE",
+                  "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."TIME_ZONE" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_HISTORY"."STATUS" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."DEVICE_OS" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."DEVICE_TYPE" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."NETWORK" ,
+                  "STG_MICROSOFT_ADS__CAMPAIGN_DAILY_REPORT"."CURRENCY_CODE"
+        name: MICROSOFT_ADS__CAMPAIGN_REPORT
+        noLinkRefs: []
+  name: MICROSOFT_ADS__CAMPAIGN_REPORT
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::156
+  type: sql
+  version: 1
+type: Node
