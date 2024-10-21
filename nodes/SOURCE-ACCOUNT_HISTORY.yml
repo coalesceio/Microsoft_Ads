@@ -1,0 +1,219 @@
+fileVersion: 1
+id: 14689202-ee35-43f8-9944-454dc63318d6
+name: ACCOUNT_HISTORY
+operation:
+  config:
+    compression: ""
+    dateformat: ""
+    enforceLength: ""
+    errornumber: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: SOURCE
+    fileFormatName: COPYfileformat
+    fileFormatType: File Format Name
+    fileNames: "'MICROSOFT_ADS_ACCOUNT_HISTORY_DATA.csv'"
+    filePattern: ""
+    fileType: CSV
+    forceLoad: ""
+    intextstage: true
+    loadUncertainFiles: ""
+    onError: ABORT_STATEMENT
+    purgeBehavior: "FALSE"
+    recDelim: |+
+
+    replaceinvalidcharacters: false
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: MICROSOFT_SEEDS/
+    stageStorageLocationName: SEEDS
+    storageintegration: ""
+    stripouterarray: false
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateColumns: ""
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft accounts.
+  isMultisource: false
+  locationName: SOURCE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9f8d8a69-310c-40e4-afc9-733d891049e3
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca1582e8-2f39-46bd-b52e-3a8856166301
+                stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a9841f5-c06c-4d81-8337-0fc9ee5f83bf
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the account.
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 461ab031-7119-41cd-925f-623da219d91c
+                stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91cea6aa-b3ea-46b7-aec8-d5896b21ad6e
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: LAST_MODIFIED_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a6908f9-fc10-4659-84e5-341e97bd63bf
+                stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a530b01b-158f-4c74-b3e9-fd9607350c09
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The time zone associated with this record.
+        name: TIME_ZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a172ad76-8b59-410c-9a4f-6190a759e10d
+                stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4f813c9-520c-4c2c-b03b-92fc38fc721a
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The currency code associated with spend and, if applicable, other metrics associated with currency.
+        name: CURRENCY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e046cd7-a73a-4617-a3f8-e6d205dfd6fa
+                stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eacf1f3d-afbb-48fe-ac27-08c76d63982c
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: $1
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ceaa840b-60cc-4926-b8f4-61d76790893d
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0f2f500-afe6-4ab1-ad54-11a43dd2c857
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e400613-bd02-4d8b-baf8-12f34c2edee6
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_ROW_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e3f419e-d3b1-43d2-883f-7fcec8ec8ee9
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_LAST_MODIFIED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5e57739-d488-498b-85b5-4b0336262194
+          stepCounter: 14689202-ee35-43f8-9944-454dc63318d6
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$START_SCAN_TIME
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: IN_ACCOUNT_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'IN_ACCOUNT_HISTORY') }} "IN_ACCOUNT_HISTORY"
+        name: ACCOUNT_HISTORY
+        noLinkRefs: []
+  name: ACCOUNT_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: EDP:::324
+  type: sql
+  version: 1
+type: Node

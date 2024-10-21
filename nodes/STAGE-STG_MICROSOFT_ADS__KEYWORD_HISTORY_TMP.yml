@@ -1,0 +1,210 @@
+fileVersion: 1
+id: c18f4037-1002-442a-a4e5-826537e604db
+name: STG_MICROSOFT_ADS__KEYWORD_HISTORY_TMP
+operation:
+  config:
+    OverrideSQLCreate: false
+    groupByAll: false
+    insertStrategy: UNION
+    secureoption: false
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft keywords.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91a5062f-edbc-4cb4-bdf1-905628aa32db
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: NUMBER(14,0)
+        description: The ID of the keyword.
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f544133-2c30-4c98-abf6-c890996cb182
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5fdd50fb-b62c-422d-ada0-ace0990235cc
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The keyword(s) associated with this record.
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fd1f558b-5551-4751-8e93-0cc3fa143880
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd61376d-2924-486b-8cf3-d172ebfda1ee
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2664b5cd-8801-4a93-8ffa-2f0cc34fbda0
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f7cd39a9-64c5-4129-830e-a1c94b4ece6a
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cef702f6-80a0-4643-aa70-e31b58caf469
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8e1ee643-c0f3-44d8-9b3d-de9e21d79ef0
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The match type associated with this record; values contain but may not be limited to 'Broad', 'Exact', 'Phrase'. Please refer to Microsoft Ad's [documentation](https://help.ads.microsoft.com/#apex/ads/en/50822/1).
+        name: MATCH_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: efd893b3-8810-4ada-a1a8-8983f173fdf7
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a0f7471-16c3-4787-a088-c5f37f488ed3
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The status of this keyword; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/keywordstatus?view=bingads-13) for more information on values and definitions.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be71da94-a2a9-410b-8281-1ce8cec755cd
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7424fab1-bdac-44d1-b224-4c1dfc18d7f7
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f29b80c7-359d-4f40-9cc2-50f0cc85abd0
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9646b73-7e53-4718-9ed8-6522f3bd1860
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 21990e9f-49a8-43ad-95f0-d53172bf8a8d
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c2130970-e5a4-4fbc-ab5b-553aa88df81e
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: STRING
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c315828a-3aff-4dde-a8bd-2cbfadf89da4
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6580baf1-bae2-4ee1-93a8-1006d05282f1
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d850d456-d845-49f2-b2b8-6d9d1f29eed1
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1b83d2b-512a-4339-ac43-2e15af285a5e
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d2a63331-e0c4-470b-b20e-c2ed89cd9e40
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d968175a-77c8-4979-b700-af3263ea3029
+          stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a04baae-9b56-42b5-a4e9-7c35e5697db1
+                stepCounter: eec3614b-0c2f-4717-b339-9ac7cfcae7d9
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: KEYWORD_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'KEYWORD_HISTORY') }} "KEYWORD_HISTORY"
+        name: STG_MICROSOFT_ADS__KEYWORD_HISTORY_TMP
+        noLinkRefs: []
+  name: STG_MICROSOFT_ADS__KEYWORD_HISTORY_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT:::188
+  type: sql
+  version: 1
+type: Node

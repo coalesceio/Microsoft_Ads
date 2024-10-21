@@ -1,0 +1,234 @@
+fileVersion: 1
+id: 5af18026-95ba-439a-9b27-2ec87019954a
+name: AD_GROUP_HISTORY
+operation:
+  config:
+    compression: ""
+    dateformat: ""
+    enforceLength: ""
+    errornumber: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: SOURCE
+    fileFormatName: COPYfileformat
+    fileFormatType: File Format Name
+    fileNames: "'MICROSOFT_ADS_AD_GROUP_HISTORY_DATA.csv'"
+    filePattern: ""
+    fileType: CSV
+    forceLoad: ""
+    intextstage: true
+    loadUncertainFiles: ""
+    onError: ""
+    purgeBehavior: "FALSE"
+    recDelim: |+
+
+    replaceinvalidcharacters: false
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: MICROSOFT_SEEDS/
+    stageStorageLocationName: SEEDS
+    storageintegration: ""
+    stripouterarray: false
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateColumns: ""
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft ad groups.
+  isMultisource: false
+  locationName: SOURCE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f30fbb35-3387-43e1-82ed-0fa463d7001e
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ce5ffa3b-887e-4d68-95bb-2cb185413a39
+                stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bfa027e-8672-496e-a45a-42312e3262df
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the corresponding ad group.
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 58f99359-8545-4c53-91b6-76418b4c1929
+                stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5649e01-6655-46ca-a41b-ae570f88de37
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the campaign.
+        name: CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5519454a-af34-4035-8477-33ea40927d5f
+                stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f254b750-968c-432b-b043-6c64d7319098
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55208a38-d742-4ae1-983e-d8a3fd361b60
+                stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 812196ab-500d-4ec4-acfc-bb759606f042
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: DATE
+        description: The date in which an ad group starts running.
+        name: START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2441c6e0-7c43-4c64-bd12-a30cb52a65ed
+                stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a79c5997-86b0-46e2-acc7-1be5627ca349
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The date in which this ad group will no longer run.
+        name: END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: efb0f040-60f3-4356-b6f1-676e631b57d2
+                stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6fa32734-5b23-48cd-a982-3a71665b28d0
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The status of this ad group; see the following [documentation](https://help.ads.microsoft.com/apex/index/3/en/53094) for more information on values and definitions.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 808fa21d-6d8d-4e4b-b3a4-d691bb934bc4
+                stepCounter: 4f104a59-b59c-483d-88fb-b361913c931e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 07a45cd1-af20-4774-840b-43df8f9758f9
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe82313a-8739-4100-adf6-e710c9fe88b1
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7894b2d-44fe-4585-9913-35449fd3bfe6
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_ROW_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b0157fd-0fb6-4236-bf74-3e2dd1b1eef3
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_LAST_MODIFIED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9945d3ab-8723-4941-93a3-defa2a56feed
+          stepCounter: 5af18026-95ba-439a-9b27-2ec87019954a
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$START_SCAN_TIME
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: IN_AD_GROUP_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'IN_AD_GROUP_HISTORY') }} "IN_AD_GROUP_HISTORY"
+        name: AD_GROUP_HISTORY
+        noLinkRefs: []
+  name: AD_GROUP_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: EDP:::324
+  type: sql
+  version: 1
+type: Node

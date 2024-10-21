@@ -1,0 +1,215 @@
+fileVersion: 1
+id: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+name: STG_MICROSOFT_ADS__AD_HISTORY_TMP
+operation:
+  config:
+    OverrideSQLCreate: false
+    clusterKey: false
+    downstreamOption: false
+    groupByAll: false
+    initialize: null
+    insertStrategy: UNION
+    refresh_mode: null
+    secureoption: false
+    selectDistinct: false
+    warehouseName: null
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6b5589d-d64a-4dba-96ff-0a07a8c5e51b
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: NUMBER(14,0)
+        description: The ID of the corresponding ad.
+        name: ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8cfb07c4-8034-43e3-9fc7-aa46adae2548
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4967c292-3ed4-4307-87d4-e1f85a324ae6
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the corresponding ad; `title_part_1` is used as the ad name as a proxy as one is not provided by the data source.
+        name: TITLE_PART_1
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c20daf7b-2df4-4057-9ef6-4e5e26d27616
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3553b5d-c7a6-448b-9a70-210c19a87b60
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The full URL that the ad links to.
+        name: FINAL_URL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a91c79b9-9848-4164-9a47-c2f9ce080c47
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3482eeef-8090-4108-9fc6-118b5e5ce9c3
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1be2c742-862f-48af-8d81-a5bdd5a21522
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01cdc4bc-ad77-4b26-a313-28a47ec90d2b
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c0faf640-74e6-4853-a34b-f75f7ffaa0c0
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 540f2b19-94f0-449e-9f1a-4286fdbcce37
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The status of this ad; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/adstatus?view=bingads-13) for more information on values and definitions.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c06fe168-e9da-4b6d-82ca-9fecf2989de1
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 501706fd-8526-4c47-8a08-1ecbef1af278
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The ad type associated with this record; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/adtype?view=bingads-13) for more information on values and definitions.
+        name: TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 87b37414-5012-48ea-b22b-72a5060166fa
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b08c19b-eefa-49ac-92f1-94976ff4fbc1
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a8151a7-5248-4677-9a44-d05c373342e8
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a7de614-faa2-4941-9d38-8ce1bb198727
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: STRING
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d13402be-e380-4676-9c52-8bcbb8851a26
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9d4d17d-2884-4cee-a9ed-472efa9fa7b4
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 914decf7-049d-40b2-9f85-e74a8327bc9f
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83abc6fc-4c43-445c-8258-44c74c8d027c
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1aaebc08-1f55-4e67-9e08-b42d65e4117a
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37831d3e-431e-4634-b6a8-e040be6ec90b
+          stepCounter: 95d3e89b-6a64-4a42-ba97-d62c3678012d
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05a82584-fa6d-4cc6-bc6c-63fb7d603fc2
+                stepCounter: 41a7b91b-f4f4-4bac-8ce1-2388d4dee800
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AD_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'AD_HISTORY') }} "AD_HISTORY"
+        name: STG_MICROSOFT_ADS__AD_HISTORY_TMP
+        noLinkRefs: []
+  name: STG_MICROSOFT_ADS__AD_HISTORY_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT:::188
+  type: sql
+  version: 1
+type: Node

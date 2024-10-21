@@ -1,0 +1,165 @@
+fileVersion: 1
+id: 4b229235-e671-4d5f-8422-10782d810fec
+name: STG_MICROSOFT_ADS__KEYWORD_HISTORY
+operation:
+  config:
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Each record in this table represents a version of one or more Microsoft keywords.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0a10666-3590-4385-9075-6c75f852c6e9
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: STRING
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('' AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 03bd2f82-c82d-48ed-b1d3-147082fffc13
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: NUMBER(14,0)
+        description: The ID of the keyword.
+        name: KEYWORD_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91a5062f-edbc-4cb4-bdf1-905628aa32db
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dedd5c40-0560-4e08-b97f-308e0ece74b6
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The keyword(s) associated with this record.
+        name: KEYWORD_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fdd50fb-b62c-422d-ada0-ace0990235cc
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 40341c25-2f5f-48cf-9498-05c13f2fa67a
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: The time each version of the object was last modified, i.e. when that version of the object was 'created'.
+        name: MODIFIED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cd61376d-2924-486b-8cf3-d172ebfda1ee
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f1632da-005f-47b1-bacd-90cdc66bc4f1
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: NUMBER(16,0)
+        description: The ID of the corresponding ad group.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7cd39a9-64c5-4129-830e-a1c94b4ece6a
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 52533cc6-625e-41bf-a8f5-926f296b5ca5
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The match type associated with this record; values contain but may not be limited to 'Broad', 'Exact', 'Phrase'. Please refer to Microsoft Ad's [documentation](https://help.ads.microsoft.com/#apex/ads/en/50822/1).
+        name: MATCH_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8e1ee643-c0f3-44d8-9b3d-de9e21d79ef0
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 52b4f968-a56f-4eb7-87e5-44c9b19e7c46
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: |
+          The status of this keyword; see the following [documentation](https://docs.microsoft.com/en-us/advertising/campaign-management-service/keywordstatus?view=bingads-13) for more information on values and definitions.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a0f7471-16c3-4787-a088-c5f37f488ed3
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b43c11a-a932-46df-9f95-9e7cabe3f101
+          stepCounter: 4b229235-e671-4d5f-8422-10782d810fec
+        config: {}
+        dataType: BOOLEAN
+        description: Boolean representing whether a record is the most recent version of that record.
+        name: IS_MOST_RECENT_RECORD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91a5062f-edbc-4cb4-bdf1-905628aa32db
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+              - columnCounter: cd61376d-2924-486b-8cf3-d172ebfda1ee
+                stepCounter: c18f4037-1002-442a-a4e5-826537e604db
+            transform: |-
+              	ROW_NUMBER() OVER (PARTITION BY SOURCE_RELATION,
+              	ID
+              ORDER BY
+              	MODIFIED_TIME DESC) = 1
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__KEYWORD_HISTORY_TMP
+        join:
+          joinCondition: FROM {{ ref('STAGE', 'STG_MICROSOFT_ADS__KEYWORD_HISTORY_TMP') }} "STG_MICROSOFT_ADS__KEYWORD_HISTORY_TMP"
+        name: STG_MICROSOFT_ADS__KEYWORD_HISTORY
+        noLinkRefs: []
+  name: STG_MICROSOFT_ADS__KEYWORD_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT:::188
+  type: sql
+  version: 1
+type: Node

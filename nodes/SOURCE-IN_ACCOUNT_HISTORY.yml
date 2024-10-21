@@ -1,0 +1,115 @@
+fileVersion: 1
+id: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+name: IN_ACCOUNT_HISTORY
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca1582e8-2f39-46bd-b52e-3a8856166301
+          stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+        config: {}
+        dataType: NUMBER(9,0)
+        defaultValue: ""
+        description: ""
+        name: ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 461ab031-7119-41cd-925f-623da219d91c
+          stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a6908f9-fc10-4659-84e5-341e97bd63bf
+          stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: LAST_MODIFIED_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a172ad76-8b59-410c-9a4f-6190a759e10d
+          stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: TIME_ZONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e046cd7-a73a-4617-a3f8-e6d205dfd6fa
+          stepCounter: 949b1bc9-8bd6-4176-8030-ec6ddbab6219
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: CURRENCY_CODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'IN_ACCOUNT_HISTORY') }}
+  name: IN_ACCOUNT_HISTORY
+  schema: ""
+  sqlType: Source
+  table: IN_ACCOUNT_HISTORY
+  type: sourceInput
+  version: 1
+type: Node

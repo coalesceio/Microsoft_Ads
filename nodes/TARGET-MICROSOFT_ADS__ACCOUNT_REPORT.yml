@@ -1,0 +1,228 @@
+fileVersion: 1
+id: 1e5d16c7-add0-4936-b427-cb38d54240e3
+name: MICROSOFT_ADS__ACCOUNT_REPORT
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: |
+    Each record in this table represents the daily clicks, impressions, spend (and if applicable other passthrough metrics) of ads  by account, account timezone, device os, device type, network and currency code.
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da17f1fd-b5cf-436b-bac2-203bfff4eed2
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: STRING
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ceaae6f7-63ae-4906-998b-f0fcc2b96e2b
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3325e3d7-4a8a-4a7e-a51a-14cf1f9cea5b
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: DATE
+        description: The date of the performance report.
+        name: DATE_DAY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 27c213a8-4d12-458d-8f81-1f5352dd54d7
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 359f4816-ca27-4429-a39d-c4e6a5c4b0bd
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The name of the account.
+        name: ACCOUNT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1775d45f-f19a-4c88-a27c-2250269707b3
+                stepCounter: 63e671ee-506b-4657-a972-ae8f0f5391d1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e938d04a-46d2-45f1-9ef8-566d02433a9b
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: NUMBER(9,0)
+        description: The ID of the account.
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 821ea658-d49c-44d6-a0b7-26af8114a56f
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4b86dfb-9141-4358-b233-6dcc3f68f19c
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The time zone associated with this account.
+        name: ACCOUNT_TIMEZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 78b762b8-854b-468a-8268-b45f54cff100
+                stepCounter: 63e671ee-506b-4657-a972-ae8f0f5391d1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e146e189-553f-4cdf-a01b-5168fc513cb0
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device operating system associated with this record; values include but may not be limited to 'Windows', 'iOS', 'Android', 'Other', 'BlackBerry' and 'Unknown'.
+        name: DEVICE_OS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 31769b50-5e73-4bd9-8077-a094bfab37c6
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4516b0a-562f-4d77-933c-18834a8fb65a
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The device type associated with this record; values include but may not be limited to 'Computer', 'Smartphone', 'Tablet' and 'Unknown'.
+        name: DEVICE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74a9c70c-94a3-4ca9-91a8-cec39f77c793
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc3389d7-c7ac-4d31-bf45-f9ac15875940
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The network associated with this record.
+        name: NETWORK
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6da67d1a-d01f-4d82-8747-c13e27bcd5ad
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d90312c2-02dd-4d06-bc40-e4a6d2cca547
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: The currency code associated with spend and, if applicable, other metrics associated with currency.
+        name: CURRENCY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f9fa19d6-bfbc-4c59-ad34-1a6498295c01
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1caa7178-8268-45e4-9a67-743d1bcf8efe
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: NUMBER(1,0)
+        description: The number of clicks that occurred by the grain of the report.
+        name: CLICKS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7f4c9d2-919b-4c7e-b661-e07d477e4d2a
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: SUM("STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."CLICKS")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6c4b5ab-cf30-4dcd-997f-cba61b97d53a
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: NUMBER(1,0)
+        description: The number of impressions that occurred by the grain of the report.
+        name: IMPRESSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2478598-47a9-4a71-b9d0-f4f5e3e2fd0b
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: SUM("STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."IMPRESSIONS")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92444a7a-b124-4d4c-864d-35a6700ede1c
+          stepCounter: 1e5d16c7-add0-4936-b427-cb38d54240e3
+        config: {}
+        dataType: NUMBER(1,0)
+        description: The amount of spend that occurred by the grain of the report.
+        name: SPEND
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 13baa952-954a-4fe3-b624-60c43bc1cf60
+                stepCounter: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+            transform: SUM("STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."SPEND")
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT: 7123b489-9e3d-494e-be2a-19b2cfb5a4b2
+          STG_MICROSOFT_ADS__ACCOUNT_HISTORY: 63e671ee-506b-4657-a972-ae8f0f5391d1
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT
+          - locationName: STAGE
+            nodeName: STG_MICROSOFT_ADS__ACCOUNT_HISTORY
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE', 'STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT') }} "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"
+            LEFT JOIN {{ ref('STAGE', 'STG_MICROSOFT_ADS__ACCOUNT_HISTORY') }} "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"
+              ON "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."ACCOUNT_ID" = "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."ACCOUNT_ID"
+            AND "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."SOURCE_RELATION" = "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."SOURCE_RELATION"
+            AND "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."IS_MOST_RECENT_RECORD" = TRUE
+            GROUP BY
+              "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."SOURCE_RELATION",
+              "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."DATE_DAY",
+              "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."ACCOUNT_NAME",
+              "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."ACCOUNT_ID" ,
+              "STG_MICROSOFT_ADS__ACCOUNT_HISTORY"."TIME_ZONE" ,
+              "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."DEVICE_OS",
+              "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."DEVICE_TYPE" ,
+              "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."NETWORK" ,
+              "STG_MICROSOFT_ADS__ACCOUNT_DAILY_REPORT"."CURRENCY_CODE" 
+        name: MICROSOFT_ADS__ACCOUNT_REPORT
+        noLinkRefs: []
+  name: MICROSOFT_ADS__ACCOUNT_REPORT
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT:::188
+  type: sql
+  version: 1
+type: Node
